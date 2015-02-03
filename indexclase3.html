@@ -7,6 +7,7 @@
 	
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="pulsa.css">
+	<script src="jquery-2.1.3.min.js"></script>
 </head>
 <body>
 	<header class="row">
@@ -248,8 +249,42 @@
 		</h3>
 	</footer>
 	<script>
-		var a = 20;
-		console.log("valor de a: "+a);
+		function darBienvenida(){
+			alert ('Bienvenido');
+		}
+
+		function hacerAlgoImportante(){
+			console.log ('Estoy haciendo algo importante');
+		}
+
+		/*function atachar (obj, evento, funcion){
+			if (obj.addEventListener){//si el navegador no era IE
+				obj.addEventListener(evento, funcion);
+			} else {
+				obj.attachEvent('on'+evento, funcion)//para IE
+			}
+		}
+
+		atachar(window, 'load', darBienvenida);
+		atachar(window, 'load', hacerAlgoImportante);*/		
+		/*$(window)
+			.on('load', darBienvenida)
+			.on('load', hacerAlgoImportante);
+		$(document).on('ready', function(){
+			//Este codigo se ejecuta cuand se dispara
+			//el evento DOMContentLoaded  
+		});*/
+		$(function(){
+			/*var p = document.getElementsByClassName('publicar')[0];
+			$(p).on('click', darBienvenida);*/
+			$('.publicar')
+				.on('click', darBienvenida)
+				.on('click', function(){
+					console.log('Me hicieron clic');
+				});
+				.off('click', darBienvenida)
+			/*$('.publicar').off('click', darBienvenida);*/
+		});
 	</script>
 </body>
 </html>

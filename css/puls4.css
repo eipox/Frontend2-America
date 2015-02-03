@@ -32,6 +32,14 @@ footer h3 .mejor:after,
 footer h3 .mejor:before {
   content: " - ";
 }
+form {
+  padding: 0.8em;
+  display: none;
+}
+form label {
+  display: inline-block;
+  width: 60px;
+}
 header {
   background: #444;
   box-shadow: 0 5px rgba(0,0,0,0.2);
