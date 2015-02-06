@@ -314,7 +314,7 @@
 					</div> \
 				</article>';
 
-				$('.posts').prepend($(template).fadeIn());
+				$('.posts').prepend(template);
 				$('input[type=text]').val('');
 				$('form').slideUp();				
 			}
@@ -344,13 +344,13 @@
 				};
 			};
 
-			$('.total').each(function(i, elem){
+			$('.total').each(function(i, elem){ /*dame todos los elementos con clase total y por cada uno de ellos ejecuta una funcion con parametros i, elem*/
 				var contTotal = crearContador();
 				$(elem)
-					.siblings('.up')
+					.siblings('.up')//siglings permite obtener el elemento que esta al mismo nivel de la clase total (elemento hermano)
 						.on('click', function(ev){
-							ev.preventDefault();
-							$(elem).html(contTotal.up());
+							ev.preventDefault();/*Evita que la pagina se recargue*/
+							$(elem).html(contTotal.up()); /*se asigna al elemento elem el valor devuelto por la funcion contTotal.up()*/
 						})
 
 					.siblings('.down')
