@@ -85,7 +85,7 @@
 			<div class="acciones"><!-- Aqui van las votaciones -->
 				<div class="votos">
 					<a class="up" href="#"></a>
-					<span class="total">155</span>
+					<span class="total">12</span>
 					<a class="down" href="#"></a>
 				</div>
 				<div class="datos">
@@ -117,7 +117,7 @@
 			<div class="acciones"><!-- Aqui van las votaciones -->
 				<div class="votos">
 					<a class="up" href="#"></a>
-					<span class="total">155</span>
+					<span class="total">69</span>
 					<a class="down" href="#"></a>
 				</div>
 				<div class="datos">
@@ -149,7 +149,7 @@
 			<div class="acciones"><!-- Aqui van las votaciones -->
 				<div class="votos">
 					<a class="up" href="#"></a>
-					<span class="total">155</span>
+					<span class="total">3</span>
 					<a class="down" href="#"></a>
 				</div>
 				<div class="datos">
@@ -332,8 +332,8 @@
 					.on('click', crearSizer(pixels));
 			});
 
-			function crearContador(){
-				var contador = 0;
+			function crearContador(valorInicial){
+				var contador = valorInicial || 0;/*Si no existe un valor inicila se asigna 0 */
 				return{
 					up : function(){
 						return ++contador;
@@ -345,7 +345,7 @@
 			};
 
 			$('.total').each(function(i, elem){ /*dame todos los elementos con clase total y por cada uno de ellos ejecuta una funcion con parametros i, elem*/
-				var contTotal = crearContador();
+				var contTotal = crearContador(elem.innerHTML); /*representa el numero de votos que esta embebido en el html*/
 				$(elem)
 					.siblings('.up')//siglings permite obtener el elemento que esta al mismo nivel de la clase total (elemento hermano)
 						.on('click', function(ev){
