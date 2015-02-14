@@ -3,7 +3,8 @@ $(document).ready(function(){
 
 	//Crear una nueva instancia de la coleccion llamada articles
 	window.collections.articles = new Puls3.Collections.Articles();
-
+	/*Cuando se agregue un nuevo elemento a la coleccion se debe
+	generar una vista en body*/
 	window.collections.articles.on('add', function (model){//Escucha cuando se agrega nuevos articulos
 		//console.log('Se ha agregado: ', model.toJSON());
 		//Agregar nuevas vistas de articulos aqui
