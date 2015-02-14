@@ -358,8 +358,30 @@
 							ev.preventDefault();
 							$(elem).html(contTotal.down());
 						});
-			});			
-		});
+			});		
+
+			// $('.posts').on('click', '.up', function(){
+			// 	//var contTotal = crearContador();
+			// 	$(this).each(function(indice, elemento){
+			// 		var contTotal = crearContador();
+			// 		$(elemento)
+			// 			.siblings('.total').html(contTotal.up());
+						
+			// 	});
+			// 		//.siblings('.total').html(contTotal.up());
+			// 	//$('.total').html(contTotal.up());
+					
+			// });
+
+			/*$('.posts').on('click', '.up', function(){
+				var contTotal = crearContador();
+				$(this)
+					.siblings('.total')
+						.on('click', function(){
+							$('total').html(contTotal.up());
+						});	
+			});*/
+		});	
 	</script>
 </body>
 </html>
