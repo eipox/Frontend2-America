@@ -8,7 +8,8 @@ Puls3.Views.Article = Backbone.View.extend({
 	initialize : function(){
 		//debugger;
 
-		this.template = _.template($('#article-template').html());
+		//this.template = _.template( $('#article-template').html() );
+		this.template = swig.compile( $('#article-template').html() ); //usando el template swig
 	},
 
 	render : function(){
@@ -16,7 +17,7 @@ Puls3.Views.Article = Backbone.View.extend({
 		//junto data con el template
 		var html = this.template(data);
 
-		this.$el.html(html);
+		this.$el.html( html );
 	}
 
 });
