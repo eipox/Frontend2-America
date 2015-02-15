@@ -8,11 +8,11 @@ $(document).ready(function(){
 	window.collections.articles.on('add', function (model){//Escucha cuando se agrega nuevos articulos
 		//console.log('Se ha agregado: ', model.toJSON());
 		//Agregar nuevas vistas de articulos aqui
-		var view = new	Puls3.Views.Article({model: model});
+		var view = new Puls3.Views.Article({model: model});
 
 		view.render();
 
-		view.$el.appendTo('body'); // Agrega el articulo al body
+		view.$el.appendTo('.posts'); // Agrega el articulo al section post
 
 	});
 
